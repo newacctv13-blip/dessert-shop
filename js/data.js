@@ -1,0 +1,137 @@
+const DATA = {
+  lang: 'ru',
+  settings: {
+    phone: '+37376732386',
+    instagram: '@sweetme',
+    instagramUrl: 'https://www.instagram.com/sweetme.md/',
+    whatsappNumber: '37376732386',
+    telegramUsername: 'uzumakigirju',
+    botToken: '8518399300:AAFDxeX4bDhrbBqYr1WAcWhzI97VuDl8cVY',
+    adminChatId: '330619718',
+    city: 'Chișinău',
+    address: 'str. Ginta Latină 12/13',
+    mapsUrl: 'https://maps.app.goo.gl/wXWWvyBL8gUY5gfd8',
+    deliveryFee: 60,
+    currency: 'L'
+  },
+  translations: {
+    ru: {
+      title: 'Omnom & SweetMe — Десерты со вкусом детства',
+      subtitle: 'Натуральные десерты ручной работы в Кишинёве',
+      description: 'Меня зовут Наталья! Я профессиональный кондитер и основатель студии Omnom & SweetMe. Помогу вам организовать десерты на любые мероприятия — от маленьких семейных ужинов до корпоративов и свадеб. Составлю персональное меню с учётом ваших вкусовых предпочтений, количества гостей и тематики мероприятия.',
+      workMode: 'Работаем круглосуточно',
+      deliveryInfo: 'Доставка по Кишинёву — 60 L',
+      phone: '+37376732386',
+      instagram: '@sweetme',
+      cart: 'Корзина',
+      emptyCart: 'Корзина пуста',
+      total: 'Итого',
+      delivery: 'Доставка',
+      toPay: 'К оплате',
+      order: 'Заказать',
+      addToCart: 'В корзину',
+      remove: 'Удалить',
+      item: 'шт',
+      namePlaceholder: 'Ваше имя',
+      phonePlaceholder: 'Ваш телефон',
+      orderReady: 'Ваш заказ:',
+      categories: {
+        all: 'Всё меню', cakes: 'Пирожные', tubes: 'Трубочки',
+        nuts: 'Орешки', brownie: 'Брауни', classic: 'Классика',
+        cookies: 'Печенье', candies: 'Конфеты'
+      }
+    },
+    ro: {
+      title: 'Omnom & SweetMe — Deserturi cu gustul copilăriei',
+      subtitle: 'Deserturi naturale, lucrate manual, în Chișinău',
+      description: 'Mă numesc Natalia! Sunt patiser profesionist și fondatoarea studioului Omnom & SweetMe. Vă ajut să organizați deserturi pentru orice eveniment — de la cine în familie până la corporate și nunți. Voi crea un meniu personalizat după preferințele, numărul de invitați și tema evenimentului.',
+      workMode: 'Lucrăm non-stop',
+      deliveryInfo: 'Livrare în Chișinău — 60 L',
+      phone: '+37376732386',
+      instagram: '@sweetme',
+      cart: 'Coș',
+      emptyCart: 'Coșul este gol',
+      total: 'Total',
+      delivery: 'Livrare',
+      toPay: 'De plată',
+      order: 'Comandă',
+      addToCart: 'Adaugă',
+      remove: 'Șterge',
+      item: 'buc',
+      namePlaceholder: 'Numele dvs.',
+      phonePlaceholder: 'Telefonul dvs.',
+      orderReady: 'Comanda dvs.:',
+      categories: {
+        all: 'Tot meniul', cakes: 'Prăjituri', tubes: 'Tubulețe',
+        nuts: 'Nucișoare', brownie: 'Brownie', classic: 'Clasice',
+        cookies: 'Fursecuri', candies: 'Bomboane'
+      }
+    }
+  },
+  categories: [
+    { id: 'cakes', icon: '🍰' },
+    { id: 'tubes', icon: '🥐' },
+    { id: 'nuts', icon: '🥜' },
+    { id: 'brownie', icon: '🧁' },
+    { id: 'classic', icon: '🍫' },
+    { id: 'cookies', icon: '🍪' },
+    { id: 'candies', icon: '🍬' }
+  ],
+  products: [
+    { id: 1, category: 'cakes', price: 25, image: 'images/kartoshka.svg', name: { ru: 'Пирожное картошка', ro: 'Prăjitura Cartof' }, desc: { ru: 'Нежное шоколадное пирожное с масляным кремом и какао-посыпкой', ro: 'Prăjitură fină de ciocolată cu cremă de unt și pudră de cacao' } },
+    { id: 2, category: 'tubes', price: 30, image: 'images/trubka_sgush.svg', name: { ru: 'Трубочка со сгущёнкой', ro: 'Tubuleț cu lapte condensat' }, desc: { ru: 'Хрустящая вафельная трубочка с нежной варёной сгущёнкой', ro: 'Tubuleț crocant cu lapte condensat fiert' } },
+    { id: 3, category: 'tubes', price: 30, image: 'images/trubka_zavarn.svg', name: { ru: 'Трубочка с заварным кремом', ro: 'Tubuleț cu cremă de patiserie' }, desc: { ru: 'Хрустящая трубочка с лёгким заварным кремом', ro: 'Tubuleț crocant cu cremă fină de patiserie' } },
+    { id: 4, category: 'nuts', price: 15, image: 'images/oreshki_classic.svg', name: { ru: 'Орешки классические со сгущёнкой', ro: 'Nucișoare clasice cu lapte condensat' }, desc: { ru: 'Песочные орешки с варёной сгущёнкой — вкус из детства', ro: 'Nucișoare fragede cu lapte condensat fiert — gust din copilărie' } },
+    { id: 5, category: 'nuts', price: 18, image: 'images/oreshki_razn.svg', name: { ru: 'Орешки с разными начинками', ro: 'Nucișoare cu diferite umpluturi' }, desc: { ru: 'Орешки с начинкой на выбор: шоколадная, кокосовая, фисташковая', ro: 'Nucișoare cu umplutură la alegere: ciocolată, cocos, fistic' } },
+    { id: 6, category: 'brownie', price: 55, image: 'images/brownie_cup.svg', name: { ru: 'Брауни в стаканчике', ro: 'Brownie în pahar' }, desc: { ru: 'Шоколадный брауни с жидкой сердцевиной в удобном стаканчике', ro: 'Brownie de ciocolată cu inimă lichidă în pahar' } },
+    { id: 7, category: 'brownie', price: 45, image: 'images/brownie_port.svg', name: { ru: 'Брауни порционный', ro: 'Brownie porționat' }, desc: { ru: 'Классический шоколадный брауни с орехами', ro: 'Brownie clasic de ciocolată cu nuci' } },
+    { id: 8, category: 'classic', price: 35, image: 'images/ptichmoloko.svg', name: { ru: 'Птичье молоко', ro: 'Lapte de pasăre' }, desc: { ru: 'Нежнейшее суфле в шоколадной глазури', ro: 'Sufleu fin în glazură de ciocolată' } },
+    { id: 9, category: 'classic', price: 40, image: 'images/muraveinik.svg', name: { ru: 'Муравейник порционный', ro: 'Mușuroi porționat' }, desc: { ru: 'РассЫпчатое печенье с нежным заварным кремом', ro: 'Fursecuri sfărâmicioase cu cremă fină de patiserie' } },
+    { id: 10, category: 'classic', price: 50, image: 'images/kolbasa.svg', name: { ru: 'Колбаса шоколадная', ro: 'Cârnat de ciocolată' }, desc: { ru: 'Классическая шоколадная колбаса с печеньем и орехами', ro: 'Cârnat clasic de ciocolată cu fursecuri și nuci' } },
+    { id: 11, category: 'cookies', price: 12, image: 'images/ovsyanoe.svg', name: { ru: 'Овсяное печенье', ro: 'Fursecuri ovăz' }, desc: { ru: 'Домашнее овсяное печенье с изюмом и корицей', ro: 'Fursecuri de ovăz de casă cu stafide și scorțișoară' } },
+    { id: 12, category: 'candies', price: 10, image: 'images/iriski.svg', name: { ru: 'Ириски разных вкусов', ro: 'Caramele cu diferite arome' }, desc: { ru: 'Мягкие молочные ириски: ванильные, шоколадные, кофейные', ro: 'Caramele moi lactate: vanilie, ciocolată, cafea' } },
+    { id: 13, category: 'candies', price: 15, image: 'images/gribochki.svg', name: { ru: 'Грибочки', ro: 'Ciupercuțe' }, desc: { ru: 'Песочное печенье в виде грибочков со сгущёнкой', ro: 'Fursecuri în formă de ciupercuțe cu lapte condensat' } },
+    { id: 14, category: 'cakes', price: 35, image: 'images/napoleon.svg', name: { ru: 'Наполеон порционный', ro: 'Napoleon porționat' }, desc: { ru: 'Слоёное пирожное с нежным заварным кремом', ro: 'Prăjitură cremoasă cu foi fragede și cremă de patiserie' } },
+    { id: 15, category: 'cakes', price: 30, image: 'images/ecler.svg', name: { ru: 'Эклер заварной', ro: 'Ecler cu cremă de patiserie' }, desc: { ru: 'Воздушный эклер с заварным кремом и шоколадной глазурью', ro: 'Ecler aerat cu cremă de patiserie și glazură de ciocolată' } },
+    { id: 16, category: 'cakes', price: 28, image: 'images/korzinochka.svg', name: { ru: 'Корзиночка с фруктами', ro: 'Coșuleț cu fructe' }, desc: { ru: 'Песочная корзиночка с фруктовой начинкой и желе', ro: 'Coșuleț fraged cu umplutură de fructe și jeleu' } },
+    { id: 17, category: 'cakes', price: 22, image: 'images/makaron.svg', name: { ru: 'Макарон миндальный', ro: 'Macaron cu migdale' }, desc: { ru: 'Французский миндальный макарон с кремовой начинкой', ro: 'Macaron franțuzesc cu migdale și cremă fină' } },
+    { id: 36, category: 'cakes', price: 35, image: 'images/medovik.svg', name: { ru: 'Медовик порционный', ro: 'Medovik porționat' }, desc: { ru: 'Нежные медовые коржи с заварным кремом', ro: 'Foi fragede cu miere și cremă de patiserie' } },
+    { id: 37, category: 'cakes', price: 30, image: 'images/vatrushka.svg', name: { ru: 'Ватрушка королевская', ro: 'Brânzoi regal' }, desc: { ru: 'Песочная ватрушка с творожной начинкой', ro: 'Coșuleț fraged cu umplutură de brânză dulce' } },
+    { id: 38, category: 'cakes', price: 28, image: 'images/beze.svg', name: { ru: 'Безе воздушное', ro: 'Beze aerată' }, desc: { ru: 'Хрустящее безе с нежной сливочной прослойкой', ro: 'Bezea crocantă cu strat fin de cremă' } },
+    { id: 39, category: 'cakes', price: 45, image: 'images/fondant.svg', name: { ru: 'Фондан шоколадный', ro: 'Fondant de ciocolată' }, desc: { ru: 'Тающий шоколадный фондан с жидкой сердцевиной', ro: 'Fondant topit de ciocolată cu inimă lichidă' } },
+    { id: 40, category: 'cakes', price: 32, image: 'images/smetannik.svg', name: { ru: 'Сметанник нежный', ro: 'Prăjitură cu smântână' }, desc: { ru: 'Нежный бисквит с лёгким сметанным кремом', ro: 'Pandișpan fin cu cremă ușoară de smântână' } },
+    { id: 18, category: 'tubes', price: 28, image: 'images/trubka_belok.svg', name: { ru: 'Трубочка с белковым кремом', ro: 'Tubuleț cu cremă de albuș' }, desc: { ru: 'Хрустящая трубочка с лёгким воздушным белковым кремом', ro: 'Tubuleț crocant cu cremă aerată de albuș' } },
+    { id: 19, category: 'tubes', price: 32, image: 'images/trubka_choco.svg', name: { ru: 'Трубочка шоколадная', ro: 'Tubuleț de ciocolată' }, desc: { ru: 'Вафельная трубочка с шоколадным кремом и глазурью', ro: 'Tubuleț crocant cu cremă de ciocolată și glazură' } },
+    { id: 20, category: 'tubes', price: 30, image: 'images/trubka_coco.svg', name: { ru: 'Трубочка кокосовая', ro: 'Tubuleț cu cocos' }, desc: { ru: 'Нежная трубочка с кокосовым кремом и стружкой', ro: 'Tubuleț fin cu cremă de cocos și fulgi' } },
+    { id: 21, category: 'nuts', price: 20, image: 'images/oreshki_fistashka.svg', name: { ru: 'Орешки фисташковые', ro: 'Nucișoare cu fistic' }, desc: { ru: 'Орешки с нежной фисташковой начинкой', ro: 'Nucișoare cu umplutură fină de fistic' } },
+    { id: 22, category: 'nuts', price: 18, image: 'images/oreshki_choco.svg', name: { ru: 'Орешки шоколадные', ro: 'Nucișoare cu ciocolată' }, desc: { ru: 'Хрустящие орешки с шоколадной начинкой', ro: 'Nucișoare crocante cu umplutură de ciocolată' } },
+    { id: 23, category: 'nuts', price: 20, image: 'images/oreshki_coco.svg', name: { ru: 'Орешки кокосовые', ro: 'Nucișoare cu cocos' }, desc: { ru: 'Нежные орешки с кокосовой начинкой', ro: 'Nucișoare fragede cu umplutură de cocos' } },
+    { id: 24, category: 'brownie', price: 48, image: 'images/brownie_nuts.svg', name: { ru: 'Брауни с орехами', ro: 'Brownie cu nuci' }, desc: { ru: 'Шоколадный брауни с грецкими орехами', ro: 'Brownie de ciocolată cu nuci' } },
+    { id: 25, category: 'brownie', price: 50, image: 'images/brownie_caramel.svg', name: { ru: 'Брауни с карамелью', ro: 'Brownie cu caramel' }, desc: { ru: 'Брауни с солёной карамелью и шоколадной крошкой', ro: 'Brownie cu caramel sărat și fulgi de ciocolată' } },
+    { id: 26, category: 'brownie', price: 52, image: 'images/brownie_double.svg', name: { ru: 'Брауни двойной шоколад', ro: 'Brownie dublu ciocolată' }, desc: { ru: 'Насыщенный брауни из двух видов шоколада', ro: 'Brownie bogat din două tipuri de ciocolată' } },
+    { id: 27, category: 'classic', price: 42, image: 'images/tiramisu.svg', name: { ru: 'Тирамису порционный', ro: 'Tiramisu porționat' }, desc: { ru: 'Классическое тирамису с маскарпоне и кофе', ro: 'Tiramisu clasic cu mascarpone și cafea' } },
+    { id: 28, category: 'classic', price: 38, image: 'images/cheesecake.svg', name: { ru: 'Чизкейк Нью-Йорк', ro: 'Cheesecake New York' }, desc: { ru: 'Нежный чизкейк с ягодным топпингом', ro: 'Cheesecake fin cu topping de fructe de pădure' } },
+    { id: 29, category: 'cookies', price: 14, image: 'images/pechenie_choco.svg', name: { ru: 'Печенье шоколадное', ro: 'Fursecuri cu ciocolată' }, desc: { ru: 'Хрустящее шоколадное печенье с какао-крупкой', ro: 'Fursecuri crocante de ciocolată cu fulgi de cacao' } },
+    { id: 30, category: 'cookies', price: 10, image: 'images/pechenie_pesochnoe.svg', name: { ru: 'Печенье песочное', ro: 'Fursecuri fragede' }, desc: { ru: 'РассЫпчатое песочное печенье из натурального масла', ro: 'Fursecuri sfărâmicioase din unt natural' } },
+    { id: 31, category: 'cookies', price: 13, image: 'images/pechenie_imbir.svg', name: { ru: 'Печенье имбирное', ro: 'Fursecuri cu ghimbir' }, desc: { ru: 'Ароматное имбирное печенье с корицей', ro: 'Fursecuri aromate cu ghimbir și scorțișoară' } },
+    { id: 32, category: 'cookies', price: 15, image: 'images/pechenie_djem.svg', name: { ru: 'Печенье с джемом', ro: 'Fursecuri cu dulceață' }, desc: { ru: 'Сдобное печенье с ягодным джемом', ro: 'Fursecuri fragede cu dulceață de fructe de pădure' } },
+    { id: 33, category: 'candies', price: 18, image: 'images/truffle.svg', name: { ru: 'Трюфель шоколадный', ro: 'Trufe de ciocolată' }, desc: { ru: 'Изысканный шоколадный трюфель с какао-посыпкой', ro: 'Trufe fine de ciocolată cu pudră de cacao' } },
+    { id: 34, category: 'candies', price: 12, image: 'images/caramel.svg', name: { ru: 'Карамель сливочная', ro: 'Caramel cremos' }, desc: { ru: 'Мягкая сливочная карамель ручной работы', ro: 'Caramel moale cremos lucrat manual' } },
+    { id: 35, category: 'candies', price: 14, image: 'images/marmelad.svg', name: { ru: 'Мармелад жевательный', ro: 'Marmeladă de mestecat' }, desc: { ru: 'Фруктовый жевательный мармелад разных вкусов', ro: 'Marmeladă de fructe de mestecat cu diverse arome' } }
+  ]
+};
+
+const DataLoader = {
+  async load() {
+    try {
+      const res = await fetch('data.json?_t=' + Date.now());
+      if (!res.ok) throw new Error('HTTP ' + res.status);
+      const json = await res.json();
+      Object.assign(DATA, json);
+      DATA.lang = DATA.lang || 'ru';
+      console.log('Loaded data.json');
+    } catch (err) {
+      console.log('Using inline data (data.json not available)');
+    }
+  }
+};
